@@ -2,7 +2,8 @@
 // babel.legacy中通过 presets[0][1]修改target
 const presets = [
   // '@babel/preset-env'
-  ['@babel/preset-react']
+  ['@babel/preset-react'],
+  ['@babel/preset-typescript']
 ]
 
 const plugins = [
