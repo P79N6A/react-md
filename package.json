@@ -1,14 +1,26 @@
 {
   "scripts": {
+    "lint": "eslint src --fix --ext .ts,.tsx",
     "start": "webpack-dev-server --colors --config ./webpack-config/webpack.dev.js",
     "build": "webpack --config ./webpack-config/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
+    "@types/styled-jsx": "^2.2.8",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "happypack": "^5.0.1",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.18.2",
@@ -32,7 +44,30 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "style-loader": "^1.0.0",
+    "styled-jsx": "^3.2.1",
     "typescript": "^3.6.2",
     "url-loader": "^2.1.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2
+  },
+  "eslintIgnore": [
+    "webpack-config",
+    "node_modules"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

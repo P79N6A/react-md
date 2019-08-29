@@ -12,6 +12,21 @@ Object.keys(static.ENTRY).forEach(name =>
 );
 
 /** rule */
+/** eslint */
+// config.module
+//   .rule('eslint')
+//     .test(/\.(jsx?|tsx?)$/)
+//     .exclude
+//       .add(/node_modules/)
+//       .end()
+//     .use('prettier')
+//       .loader('eslint-loader')
+//       .before()
+//       .options({
+        // fix: true
+        // cache: true
+      // })
+
 /** js */
 config.module
   .rule('js')

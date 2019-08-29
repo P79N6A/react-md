@@ -67,6 +67,8 @@ module.exports = {
   PUBLICPATH: devMode ? "/" : "./",
   /** resolve modules 路径 */
   MODULESPATH: resolve('../src/'),
+  /** prettier eslint自动格式化的文件 */
+  ESLINTPATH: resolve('../src/'),
   alias,
   ...devServer,
   ...htmlWebPackPlugin

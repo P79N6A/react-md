@@ -7,7 +7,10 @@ const presets = [
 ]
 
 const plugins = [
-  ['@babel/plugin-transform-runtime']
+  ['@babel/plugin-transform-runtime'],
+  ['styled-jsx/babel', {
+    sourceMaps: process.env.NODE_ENV === 'development',
+  }]
 ]
 
 module.exports = {
